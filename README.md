@@ -95,5 +95,5 @@ As we can see from the table, although running an extra cluster is more costly t
 
 The following graph shows that scheduling task is a time consuming operation for multi node cluster. The map and reduce algorithms that work in multiple clusters are pretty good as in a single cluster.
 
-!(graph.jpg)
+![](graph.jpg)
 
