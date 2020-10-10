@@ -22,60 +22,42 @@ dataset.
 ## Map Reduce Implementation
 **Count**: finding the number of views of a particular brand's products or all products in the store.
 
-Filtering is done according to the event type = views in map function
-
-After mapping for each views the key value pair: <productid , 1>
-
-Values are combined: <productid , [1,1,1,1…1] >
-
-Values are added in reduce function.
-
-After the reduce function, key value pair <productid, # totalView>
+- Filtering is done according to the event type = views in map function
+- After mapping for each views the key value pair: <productid , 1>
+- Values are combined: <productid , [1,1,1,1…1] >
+- Values are added in reduce function.
+- After the reduce function, key value pair <productid, # totalView>
 
 **Average:** Calculating the average earnings per unit of product for a particular brand or for all brands
 in the store
 
-Filtering is done according to the event type = purchase in map function
-
-After Mapping the key value pair:<brandName, price>
-
-Values are combined: <brandName, price[ ]>
-
-Prices are added and divided to number of the value size in the reduce function.
-
-After the reduce function, key value pair: <brandName, avgPrice>
+- Filtering is done according to the event type = purchase in map function
+- After Mapping the key value pair:<brandName, price>
+- Values are combined: <brandName, price[ ]>
+- Prices are added and divided to number of the value size in the reduce function.
+- After the reduce function, key value pair: <brandName, avgPrice>
 
 **MinMax:** Finding the cheapest and most expensive products for each brand in the store
 
-The CoupleWritable(double, int) class is used to write 2 variables to a value.
-
-After Mapping the key value pair: <brandName, (price,productId)>
-
-After combining the key value pair: <brandName, (price,productId)[ ] >
-
-In reduce function, min and max values are searched.
-
-After reducing the key value pair: <brandName, (minPrice,productId)> 
+- The CoupleWritable(double, int) class is used to write 2 variables to a value.
+- After Mapping the key value pair: <brandName, (price,productId)>
+- After combining the key value pair: <brandName, (price,productId)[ ] >
+- In reduce function, min and max values are searched.
+- After reducing the key value pair: <brandName, (minPrice,productId)> 
 
 **StdDeviation:** Finding the standard deviation in the prices of products for each brand in the store
 
-After Mapping the key value pair: <brandName, price>
-
-After combining  the key value pair: <brandName, price[]>
-
-Std dev are calculated in reduce function.
-
-After reducing the key value pair: <brandName, stdDevOfPrices>
+- After Mapping the key value pair: <brandName, price>
+- After combining  the key value pair: <brandName, price[]>
+- Std dev are calculated in reduce function.
+- After reducing the key value pair: <brandName, stdDevOfPrices>
 
 **Median:** Finding the median value in the prices of products for each brand in the store
 
-After Mapping <brandName, price>
-
-After combining the key value pair: <brandName, price[ ]>
-
-Finding median value in reduce function.
-
-After reducing the key value pair: <brandName, medianOfPrices>
+- After Mapping <brandName, price>
+- After combining the key value pair: <brandName, price[ ]>
+- Finding median value in reduce function.
+- After reducing the key value pair: <brandName, medianOfPrices>
 
 ## Performance Evaluation
 
